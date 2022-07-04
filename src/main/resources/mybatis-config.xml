@@ -3,6 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <!--引入配置文件-->
+    <properties resource="jdbc.properties"></properties>
+
     <!--设置连接数据库的环境-->
     <environments default="development">
         <!--在这可以配置多个连接数据库环境
@@ -29,10 +32,12 @@
             -->
             <!--设置连接数据库的驱动-->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/test"/>
-                <property name="username" value="root"/>
-                <property name="password" value="root"/>
+
+                <!--需要引入properties文件才能使用（上面已经已经）-->
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments> <!--引入映射文件-->
