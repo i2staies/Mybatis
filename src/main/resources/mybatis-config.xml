@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration> <!--设置连接数据库的环境-->
-    <environments default="development">  <!--在这可以配置多个连接数据库 环境-->
+<configuration>
+
+    <!--设置连接数据库的环境-->
+    <environments default="development">
+        <!--在这可以配置多个连接数据库环境
+            default设置默认使用环境的id-->
         <environment id="development">
+            <!--
+                transactionManager: 设置事务管理方式
+                属性：
+                    type="JDBC|MANAGED"
+                    JDBC:表示当前环境中，执行sql时，使用的时JDBC中原生的事务管理方式（事务提交或回滚需要手动处理）
+                    MANAGED: 表示被管理，例如spring
+             -->
+
             <transactionManager type="JDBC"/><!--设置事务管理类型-->
             <!--所有的事务提交和回滚都需要手动处理-->
+            <!--
+                dataSource：配置数据源
+                属性：
+                    type： 设置数据源的类型
+                    type="POOLED|UNPOOLED|JDID"
+                    POOLED: 表示使用数据库连接池缓存数据库连接
+                    UNPOOLED： 表示不适用数据库连池
+                    JDID： 表示使用上下文中的数据源
+            -->
+            <!--设置连接数据库的驱动-->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306/test"/>
