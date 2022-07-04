@@ -65,8 +65,20 @@
                 <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
-    </environments> <!--引入映射文件-->
+    </environments>
+
+    <!--引入映射文件-->
     <mappers>
-        <mapper resource="mappers/UserMapper.xml"/>
+        <!--<mapper resource="mappers/UserMapper.xml"/>-->
+        <!--以包为单位引入映射文件
+            要求：
+                1. mapper接口所在的包要和映射文件所在的包一致
+                2. mapper接口要和映射文件的名字一致
+
+            注意事项：
+                在创建包时不能使用.一次性创建，因为在此处是文件，而不是类
+                一次性创建需要使用/来分割
+        -->
+        <package name="com.itguigu.mybatis.mapper"/><!--在此处是resources文件下的mapper包-->
     </mappers>
 </configuration>
