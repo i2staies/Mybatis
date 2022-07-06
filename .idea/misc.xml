@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/../JavaWeb/Web_HTML" />
+    <file type="web" url="file://$PROJECT_DIR$/../JDBC" />
     <file type="web" url="file://$PROJECT_DIR$" />
     <file type="web" url="file://$PROJECT_DIR$/../Mybatis2" />
   </component>
@@ -9,6 +11,9 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../Mybatis2/pom.xml" />
+        <option value="$PROJECT_DIR$/../JDBC/pom.xml" />
+        <option value="$PROJECT_DIR$/../JavaWeb/pom.xml" />
+        <option value="$PROJECT_DIR$/../JavaWeb/Web_HTML/pom.xml" />
       </list>
     </option>
   </component>

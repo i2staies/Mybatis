@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Web_HTML:war">
+    <output-path>$PROJECT_DIR$/../JavaWeb/Web_HTML/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Web_HTML</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Web_HTML.war">
+      <element id="artifact" artifact-name="Web_HTML:war exploded" />
+    </root>
+  </artifact>
+</component>
